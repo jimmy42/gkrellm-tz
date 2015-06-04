@@ -1,0 +1,43 @@
+------------------------------------------------------------------------------
+Notation:
+    + a new feature was added
+    - something was removed
+    * code change
+    F a bug was fixed
+    o note
+-----------------------------------------------------------------------------
+
+version 0.8 (2014-04-06)
+========================
+* Code and build process changes for better interoperability
++ Support pango markup in custom time format (Elliot Kendall)
+
+
+version 0.7 (2010-09-30)
+========================
+F SIGSEGV when edit boxes are empty and Add/Edit is pushed
+
+
+version 0.6 (2010-01-14)
+========================
++ GtkTooltip API is used for gtk+ >= 2.12
+F tooltips handling
+F contact information
+
+
+version 0.5 (2007-11-20)
+========================
+F it didn't display correctly on gkrellm 2.2.7 -- the time panels had
+  incorrect heights (thanks to Ian Langworth)
+F don't lose spaces at the beginning of format strings
+
+
+version 0.4 (2006-12-09)
+========================
++ customizable look (time format and alignment)
+
+
+version 0.3 (2006-11-19)
+========================
+o  the first public release of gkrellm-tz
+
