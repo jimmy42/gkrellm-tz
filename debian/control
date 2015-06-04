@@ -1,0 +1,20 @@
+Source: gkrellm-tz
+Section: x11
+Priority: optional
+Maintainer: Andreas "Jimmy" Gredler <jimmy@grml.org>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 3.9.5
+Homepage: http://mamuti.net/gkrellm/gkrellm-tz.en.html
+Vcs-Git: git://gitorious.org/gkrellm-tz/gkrellm-tz.git
+Vcs-Browser: https://gitorious.org/gkrellm-tz/gkrellm-tz
+
+Package: gkrellm-tz
+Enhances: gkrellm
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Plugin for gkrellm to show different timezones
+ This plugin displays the current time in several configurable
+ timezones. It uses the standard names of timezones found under
+ /usr/share/zoneinfo/, e.g. UTC. Timezones can also have descriptive
+ labels which are shown as tooltips. Furthermore it's possible to define
+ a custom time format.

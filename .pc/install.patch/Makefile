@@ -55,10 +55,6 @@ gkrellm-tz.o: gkrellm-tz.c $(patsubst %.o,%.h,$(OBJS)) Makefile features.h
 	$(V_CC)$(CC) $(CFLAGS) -c $< -o $@
 
 install: clean all
-	install -D -s -m 644 gkrellm-tz.so $(DESTDIR)/usr/lib/gkrellm2/plugins/gkrellm-tz.so
-
-uninstall:
-	rm -f $(DESTDIR)/usr/lib/gkrellm2/plugins/gkrellm-tz.so
-
+	cp gkrellm-tz.so $$HOME/.gkrellm2/plugins/
 clean:
 	rm -f $(OBJS) gkrellm-tz.so

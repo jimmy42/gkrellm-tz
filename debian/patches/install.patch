@@ -1,0 +1,16 @@
+Description: Patched Makefile to be FHS compliant.
+Author: Andreas "Jimmy" Gredler <jimmy@grml.org>
+--- a/Makefile
++++ b/Makefile
+@@ -55,6 +55,10 @@
+ 	$(V_CC)$(CC) $(CFLAGS) -c $< -o $@
+ 
+ install: clean all
+-	cp gkrellm-tz.so $$HOME/.gkrellm2/plugins/
++	install -D -s -m 644 gkrellm-tz.so $(DESTDIR)/usr/lib/gkrellm2/plugins/gkrellm-tz.so
++
++uninstall:
++	rm -f $(DESTDIR)/usr/lib/gkrellm2/plugins/gkrellm-tz.so
++
+ clean:
+ 	rm -f $(OBJS) gkrellm-tz.so
