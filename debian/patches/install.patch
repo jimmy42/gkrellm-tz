@@ -1,8 +1,23 @@
-Description: Patched Makefile to be FHS compliant.
+Description: Patched Makefile to be FHS compliant and rewrote CFLAGS and
+LDFLAGS for hardening.
 Author: Andreas "Jimmy" Gredler <jimmy@grml.org>
---- a/Makefile
-+++ b/Makefile
-@@ -55,6 +55,10 @@
+Index: gkrellm-tz/Makefile
+===================================================================
+--- gkrellm-tz.orig/Makefile
++++ gkrellm-tz/Makefile
+@@ -25,8 +25,9 @@ endif
+ 
+ GKRELLM_CFLAGS	= $(shell pkg-config gkrellm --cflags)
+ GKRELLM_LDFLAGS	= $(shell pkg-config gkrellm --libs)
+-CFLAGS	= -fPIC -Wall -Werror -g $(GKRELLM_CFLAGS) -DVERSION=\"$(VERSION)\"
+-LDFLAGS	= -shared $(GKRELLM_LDFLAGS)
++CFLAGS += $(shell dpkg-buildflags --get CPPFLAGS)
++CFLAGS += -fPIC -Wall -Werror -g $(GKRELLM_CFLAGS) -DVERSION=\"$(VERSION)\"
++LDFLAGS += -shared $(GKRELLM_LDFLAGS)
+ 
+ OBJS	= list.o config.o gkrellm-tz.o
+ 
+@@ -55,6 +56,10 @@ gkrellm-tz.o: gkrellm-tz.c $(patsubst %.
  	$(V_CC)$(CC) $(CFLAGS) -c $< -o $@
  
  install: clean all

@@ -25,8 +25,9 @@ endif
 
 GKRELLM_CFLAGS	= $(shell pkg-config gkrellm --cflags)
 GKRELLM_LDFLAGS	= $(shell pkg-config gkrellm --libs)
-CFLAGS	= -fPIC -Wall -Werror -g $(GKRELLM_CFLAGS) -DVERSION=\"$(VERSION)\"
-LDFLAGS	= -shared $(GKRELLM_LDFLAGS)
+CFLAGS += $(shell dpkg-buildflags --get CPPFLAGS)
+CFLAGS += -fPIC -Wall -Werror -g $(GKRELLM_CFLAGS) -DVERSION=\"$(VERSION)\"
+LDFLAGS += -shared $(GKRELLM_LDFLAGS)
 
 OBJS	= list.o config.o gkrellm-tz.o
 
