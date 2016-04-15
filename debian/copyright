@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: gkrellm-tz
-Source: url:http://mamuti.net/gkrellm/gkrellm-tz.en.html
+Source: http://mamuti.net/gkrellm/gkrellm-tz.en.html
 
 Files: *
 Copyright: 2002-2014 Jiri Denemark <Jiri.Denemark@gmail.com>
